@@ -4,7 +4,7 @@ title: '#4471 review · separate causes before merging'
 owner: Nick Johnson and Codex
 status: reviewed
 reviewed: 2026-10-30
-signature: 'Nick Johnson / Codex / S01E03 / 2026-10-30'
+signature: "v1.eyJzdWIiOiIzNDAiLCJhdWQiOiJjaGFsbGVuZ2U6d2hhdC1pdC1zaG93cyIsImlhdCI6MTc5MzM2NTc1NCwiZXhwIjoxNzkzNDUyMTU0fQ.FBpGCHWto4VWhxSgz6_5iSzU8lyBJ7ueFNZH9lmN1R0"
 ---
 
 <script>
