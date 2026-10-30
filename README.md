@@ -2,20 +2,20 @@
 
 Challenge: [MEGA.dev S01E03](https://hq.mega.dev/challenges/what-it-shows).
 
-This exercise preserves the supplied support KB, adds a signed review page, and prepares one
+This exercise preserves the supplied support KB, adds a signed review page, and files one
 ticket for each distinguishable problem. No product code or fix is included.
 
 ## Review the deliverables
 
 - [Signed review source](support-kb/src/routes/kb/incidents/4471-review/+page.svx)
 - [Rendered desk view](rendered/kb/incidents/4471-review/index.html)
-- [Parser issue draft: 374 candidate reports](issue-drafts/parser.md)
-- [Form-hint issue draft: 33 reports](issue-drafts/hint.md)
-- [Invite/calendar one-day discrepancy: 1 report](issue-drafts/invite-calendar-date.md)
-- [June-only one-day discrepancy: 1 report](issue-drafts/june-one-day.md)
-- [Invite before booking creation: 1 report](issue-drafts/invite-before-booking.md)
-- [Lisbon/Toronto date discrepancy: 1 report](issue-drafts/cross-timezone-date.md)
-- [Wrong weekday display: 1 report](issue-drafts/weekday-display.md)
+- [Parser issue #1: 374 candidate reports](https://github.com/NJgit9/mega-s01e03-what-it-shows/issues/1)
+- [Form-hint issue #2: 33 reports](https://github.com/NJgit9/mega-s01e03-what-it-shows/issues/2)
+- [Invite/calendar one-day discrepancy: 1 report](https://github.com/NJgit9/mega-s01e03-what-it-shows/issues/3)
+- [June-only one-day discrepancy: 1 report](https://github.com/NJgit9/mega-s01e03-what-it-shows/issues/4)
+- [Invite before booking creation: 1 report](https://github.com/NJgit9/mega-s01e03-what-it-shows/issues/5)
+- [Lisbon/Toronto date discrepancy: 1 report](https://github.com/NJgit9/mega-s01e03-what-it-shows/issues/6)
+- [Wrong weekday display: 1 report](https://github.com/NJgit9/mega-s01e03-what-it-shows/issues/7)
 - [Reconciliation and complete report-ID partition](evidence/analysis.json)
 - [Source provenance and original-file hashes](evidence/source-manifest.json)
 
@@ -24,7 +24,7 @@ The supplied code assigns 379 to parser and 33 to hint. Intake tags disagree for
 That model is not a complete ticket inventory: it puts five contradictory symptoms inside
 parser. The reviewed ticket partition removes those five and gives each its own investigation,
 leaving 374 parser candidates and 33 hint reports. Do not merge the investigations until
-evidence establishes a shared cause. Seven drafts are not seven proven root causes.
+evidence establishes a shared cause. Seven investigation boundaries do not establish seven proven root causes.
 The accepted historical decision and all original export files are unchanged.
 
 ## Run locally
@@ -41,9 +41,9 @@ npm run preview
 ```
 
 Open `http://127.0.0.1:4173/kb/incidents/4471-review/`. Expected: the 427 − 15 = 412
-reconciliation, seven draft links with counts 374/33/1/1/1/1/1, five deduplication examples,
-separate receipt/merge timeline, and a generated author stamp. The draft links open the exact
-ticket text. GitHub filing status is stated explicitly. Change the explorer's tenant and channel to compare
+reconciliation, seven GitHub issue links with counts 374/33/1/1/1/1/1, five deduplication examples,
+separate receipt/merge timeline, and a generated author stamp. The links open the filed
+GitHub issues. The Markdown files in `issue-drafts/` retain their submitted text. Change the explorer's tenant and channel to compare
 same-subject reports with different causes. The added review appears on `/kb/`.
 
 `npm run export` writes `rendered/`, the complete static site requested by the course. Serve
@@ -72,10 +72,11 @@ scopes. An independent reconciliation of the original model by tenant form/chann
 distinct-ID grain, conflicting duplicate IDs, complete tenant joins, disjoint group membership,
 cause boundaries, the separate-investigation assignments and unknown-tenant behavior. The browser check exercises the rendered
 components, author stamp, stale historical decision warning, navigation and interactive
-deduplication examples and all seven ticket links. The original classifier/explorer remain
+deduplication examples and all seven issue links. The original classifier/explorer remain
 available as historical model evidence and are not described as a complete ticket inventory.
 
 These are report counts under the KB's classifier, not affected-user totals or independent
 production reproductions. Course acceptance does not establish that a product fix shipped.
-Public GitHub publication requires the user's approval. Issue drafts and source are ready
-for review before that action.
+The user approved public publication and all seven issues on October 30, 2026.
+Public repository: [NJgit9/mega-s01e03-what-it-shows](https://github.com/NJgit9/mega-s01e03-what-it-shows).
+`evidence/github-issues.json` records the issue numbers, URLs, counts and submitted-body hashes.

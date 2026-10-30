@@ -1,0 +1,58 @@
+[
+  {
+    "key": "parser",
+    "number": 1,
+    "url": "https://github.com/NJgit9/mega-s01e03-what-it-shows/issues/1",
+    "title": "[4471/parser] Day-first input is interpreted month-first \u2014 374 reports",
+    "reportCount": 374,
+    "bodySha256": "dd3e5f00c36cb5670711ffe0630cebfaa7c02b9cc99d5530e8d2d50848c44d31"
+  },
+  {
+    "key": "hint",
+    "number": 2,
+    "url": "https://github.com/NJgit9/mega-s01e03-what-it-shows/issues/2",
+    "title": "[4471/hint] booking-v3 date hint disagrees with date interpretation \u2014 33 reports",
+    "reportCount": 33,
+    "bodySha256": "f9473350a48574a21b20df82deb9344f70e5353c0932d5bb3fe9026b4399dd76"
+  },
+  {
+    "key": "invite-calendar-date",
+    "number": 3,
+    "url": "https://github.com/NJgit9/mega-s01e03-what-it-shows/issues/3",
+    "title": "[4471/invite-calendar-date] Invite date and calendar date differ by one day \u2014 1 report",
+    "reportCount": 1,
+    "bodySha256": "0da9760cb5413c8679e464747cfa440fe76c9f2dfc73ad637b9871d3cfe99beb"
+  },
+  {
+    "key": "june-one-day",
+    "number": 4,
+    "url": "https://github.com/NJgit9/mega-s01e03-what-it-shows/issues/4",
+    "title": "[4471/june-one-day] Bookings in June are reported one day off \u2014 1 report",
+    "reportCount": 1,
+    "bodySha256": "cecdc8457a91d70e233422b5f09e02cda89031314ff85b707cf2d45e8b5f1a06"
+  },
+  {
+    "key": "invite-before-booking",
+    "number": 5,
+    "url": "https://github.com/NJgit9/mega-s01e03-what-it-shows/issues/5",
+    "title": "[4471/invite-before-booking] Invite reportedly arrives before its booking is created \u2014 1 report",
+    "reportCount": 1,
+    "bodySha256": "52f041337a9c364100139763551133d8f242e0f5e671df64831593a613c16918"
+  },
+  {
+    "key": "cross-timezone-date",
+    "number": 6,
+    "url": "https://github.com/NJgit9/mega-s01e03-what-it-shows/issues/6",
+    "title": "[4471/cross-timezone-date] The same meeting shows different days in Lisbon and Toronto \u2014 1 report",
+    "reportCount": 1,
+    "bodySha256": "30656a558b3c657deac73f90de18f5dcb7801326cbc754062cafe521257fc9bc"
+  },
+  {
+    "key": "weekday-display",
+    "number": 7,
+    "url": "https://github.com/NJgit9/mega-s01e03-what-it-shows/issues/7",
+    "title": "[4471/weekday-display] Tuesday 6 October is displayed as Monday \u2014 1 report",
+    "reportCount": 1,
+    "bodySha256": "80ad082eb80c4f1548dd3c2bcd98d614cddc65e1dba372f825f5bf3d5ae3b413"
+  }
+]

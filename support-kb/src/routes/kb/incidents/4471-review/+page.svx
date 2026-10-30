@@ -15,7 +15,7 @@ signature: 'Nick Johnson / Codex / S01E03 / 2026-10-30'
   import RenderStamp from '#lib/kb/RenderStamp.svelte';
 </script>
 
-The [original incident page](/kb/incidents/4471) calls this one known issue with one queued fix. Its code separates parser and booking-form hint paths, but it also assigns contradictory symptoms to parser without reading their bodies. Keep actionable tickets for the modeled causes and separate investigations for the unmatched problems. A footnote does not give a problem an owner or a resolution path.
+The [original incident page](/kb/incidents/4471) calls this one known issue with one queued fix. Its code separates parser and booking-form hint paths, but it also assigns contradictory symptoms to parser without reading their bodies. The linked GitHub tickets track the modeled causes and separate investigations for the unmatched problems.
 
 ## Reconciled evidence
 
@@ -23,7 +23,7 @@ The [original incident page](/kb/incidents/4471) calls this one known issue with
 
 <details>
   <summary>Original classifier output, before the problem review</summary>
-  <p>This is the unchanged export's table, not the proposed ticket inventory. Its parser total still includes the five reports now assigned to separate investigations.</p>
+  <p>This is the unchanged export's table, before ticket review. Its parser total still includes the five reports now assigned to separate investigations.</p>
   <div class="cause-view">
     <CauseTable ticket={4471} />
   </div>
@@ -63,7 +63,7 @@ The received timestamps show failures arriving over months. The large July merge
 
 This is the October 4 export, reviewed on October 30. Counts reflect that snapshot and the supplied classification code, not an independent production reproduction or a fresh live queue. No product source or booking logs were supplied. The desk supports sched-prod and other products; this export has no product field, so it cannot attribute every report to sched-prod or establish how many of its roughly 300,000 invite recipients were affected.
 
-Each draft linked in the ticket table has its own report count, included IDs, evidence and next action. Together they assign every report once. The investigations may eventually share causes, but no supplied evidence proves that yet. Before resolving a ticket, reproduce its problem and verify the result on its own path. Course acceptance and a successful KB render do not establish that the underlying product bugs are fixed.
+Each issue linked in the ticket table has its own report count, included IDs, evidence and next action. Together they assign every report once. The investigations may eventually share causes, but no supplied evidence proves that yet. Before resolving a ticket, reproduce its problem and verify the result on its own path. Course acceptance and a successful KB render do not establish that the underlying product bugs are fixed.
 
 <RenderStamp {signature} />
 

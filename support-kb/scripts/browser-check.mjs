@@ -21,7 +21,7 @@ try {
   assert.match(text, /427.*export rows.*15.*duplicate rows.*412/s);
   assert.match(text, /379/);
   assert.match(text, /33/);
-  assert.match(text, /7 ticket drafts/);
+  assert.match(text, /7 GitHub issues filed/);
   const tickets = page.getByTestId('problem-tickets');
   assert.equal(await tickets.locator('tbody tr').count(), 7);
   const ticketCounts = [];
@@ -29,9 +29,7 @@ try {
   assert.deepEqual(ticketCounts, [374, 33, 1, 1, 1, 1, 1]);
   for (const link of await tickets.locator('a').all()) {
     const path = await link.getAttribute('href');
-    const draft = await context.request.get(`http://127.0.0.1:4173${path}`);
-    assert.equal(draft.status(), 200);
-    assert.match(await draft.text(), /Report count:/);
+    assert.match(path, /^https:\/\/github.com\/NJgit9\/mega-s01e03-what-it-shows\/issues\/[1-7]$/);
   }
   const stamp = await page.locator('.stamp b').innerText();
   assert.match(stamp, /^DR-[0-9A-HJKMNP-TV-Z]{4}-[0-9A-HJKMNP-TV-Z]{4}$/);
@@ -72,7 +70,7 @@ try {
   await page.goto('http://127.0.0.1:4173/kb/');
   assert.equal(await page.getByRole('link', { name: '#4471 review · separate causes before merging', exact: true }).count(), 1);
   assert.deepEqual(errors, []);
-  const result = { isolatedBrowser: true, stamp, snapshotCounts: { rows: 427, duplicates: 15, reports: 412, originalParser: 379, originalHint: 33 }, ticketCounts, tickets: 7, draftLinksWorking: true, dedupeCases: 5, interactiveCauseChanges: true, timelineBars: 54, historicalDecisionStale: true, reviewDiscoverable: true, mobileOverflow: overflow, browserErrors: errors };
+  const result = { isolatedBrowser: true, stamp, snapshotCounts: { rows: 427, duplicates: 15, reports: 412, originalParser: 379, originalHint: 33 }, ticketCounts, tickets: 7, githubIssueLinksRendered: true, dedupeCases: 5, interactiveCauseChanges: true, timelineBars: 54, historicalDecisionStale: true, reviewDiscoverable: true, mobileOverflow: overflow, browserErrors: errors };
   await writeFile(new URL('browser-check.json', out), JSON.stringify(result, null, 2) + '\n');
   console.log(JSON.stringify(result, null, 2));
 } finally {
