@@ -11,6 +11,7 @@
   const groups = groupByCause(merged, tenantOf);
   const tickets = reviewProblems(merged, tenantOf);
   const issueFor = (key: string) => filedIssues.find((issue) => issue.key === key);
+  const closedCount = filedIssues.filter((issue) => issue.state === 'CLOSED').length;
   const flagged = merged.filter((r) => notes.oneDayMove.includes(r.id));
   const mismatches = groups.reduce((n, g) => n + g.reports.filter((r) => r.meta.intakeTag !== g.cause).length, 0);
   const july2 = merged.filter((r) => r.mergedAt?.startsWith('2026-07-02')).length;
@@ -18,14 +19,14 @@
 </script>
 
 <p><strong>{reports.length}</strong> export rows − <strong>{reports.length - unique.length}</strong> duplicate rows = <strong>{merged.length}</strong> unique reports merged into #4471.</p>
-<p><strong>{filedIssues.length} GitHub issues filed.</strong></p>
+<p><strong>{filedIssues.length} GitHub issues filed · {closedCount} closed · {filedIssues.length - closedCount} open.</strong></p>
 <div class="table-scroll">
 <table data-testid="problem-tickets">
   <caption>One ticket per distinguishable problem; investigation causes remain unconfirmed</caption>
-  <thead><tr><th>Problem / GitHub issue</th><th>Reports</th><th>Basis</th></tr></thead>
+  <thead><tr><th>Problem / GitHub issue</th><th>Reports</th><th>Basis</th><th>Disposition</th></tr></thead>
   <tbody>
     {#each tickets as t (t.key)}
-      <tr data-problem={t.key}><th scope="row"><a href={issueFor(t.key)?.url ?? '/ticket-drafts/' + t.key + '.md'}>#{issueFor(t.key)?.number} · {t.title}</a></th><td>{t.count}</td><td>{t.kind}</td></tr>
+      <tr data-problem={t.key}><th scope="row"><a href={issueFor(t.key)?.url ?? '/ticket-drafts/' + t.key + '.md'}>#{issueFor(t.key)?.number} · {t.title}</a></th><td>{t.count}</td><td>{t.kind}</td><td>{issueFor(t.key)?.state === 'CLOSED' ? issueFor(t.key)?.stateReason === 'not_planned' ? "Closed · won't fix / retired" : 'Closed · fixed (reported)' : 'Open · investigate'}</td></tr>
     {/each}
   </tbody>
 </table>

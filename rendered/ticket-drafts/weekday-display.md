@@ -16,6 +16,12 @@ Tuesday 6 October showed as Monday. I moved it myself. I have stopped reporting 
 
 Retrieve the original booking and rendered invite, including date, year, timezone and weekday label. Distinguish a wrong weekday label from a shifted stored date. Keep this separate until evidence links it to another investigation.
 
+## Engineering disposition
+
+The [course engineering update](https://hq.mega.dev/challenges/what-it-shows#engineering-update), observed 2026-10-30, reports #4471 closed 05 oct.
+
+The update gives no per-report resolution for this investigation. Keep it OPEN pending evidence; closing source ticket #4471 does not establish that this reported symptom is resolved.
+
 ## Triage boundaries
 
 The supplied classifier produces 379 parser and 33 hint reports. Review moved five contradictory symptom reports out of the parser ticket into five separate investigations. The ticket counts now partition the 412 unique report IDs exactly once: 374 parser candidates, 33 hint reports, and five single-report investigations. These investigations may later merge if evidence establishes the same cause; distinct symptoms alone do not prove distinct root causes.

@@ -1,0 +1,9 @@
+{
+  "source": "https://hq.mega.dev/challenges/what-it-shows#engineering-update",
+  "observedOn": "2026-10-30",
+  "sourceTicket": 4471,
+  "closedDateAsWritten": "05 oct",
+  "parser": { "status": "FIXED", "detail": "fix(dates): parse dd/mm for eu locales" },
+  "hint": { "status": "WON'T FIX", "detail": "booking-v3 form retired" },
+  "verification": "Reported by the course engineering update; no independent production test or per-report resolution was supplied for the five investigations."
+}

@@ -16,6 +16,12 @@ R-41230: a Copper Studio form booking for 6 January became 1 June. Alder Physio,
 
 Generate the form hint and input interpretation from the same tenant locale. Verify all three affected tenants; include v2, app/email and month-first controls. A shared-parser fix alone does not resolve the hint mismatch.
 
+## Engineering disposition
+
+The [course engineering update](https://hq.mega.dev/challenges/what-it-shows#engineering-update), observed 2026-10-30, reports #4471 closed 05 oct.
+
+Reported WON'T FIX: booking-v3 form retired. Close as not planned, preserving retirement as the disposition; do not describe the form as repaired.
+
 ## Triage boundaries
 
 The supplied classifier produces 379 parser and 33 hint reports. Review moved five contradictory symptom reports out of the parser ticket into five separate investigations. The ticket counts now partition the 412 unique report IDs exactly once: 374 parser candidates, 33 hint reports, and five single-report investigations. These investigations may later merge if evidence establishes the same cause; distinct symptoms alone do not prove distinct root causes.

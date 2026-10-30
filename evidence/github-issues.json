@@ -5,7 +5,9 @@
     "url": "https://github.com/NJgit9/mega-s01e03-what-it-shows/issues/1",
     "title": "[4471/parser] Day-first input is interpreted month-first \u2014 374 reports",
     "reportCount": 374,
-    "bodySha256": "dd3e5f00c36cb5670711ffe0630cebfaa7c02b9cc99d5530e8d2d50848c44d31"
+    "bodySha256": "0cbba59c9afc0dbda2df977170cc697055492b8710dfd81a86397aa6fe103351",
+    "state": "CLOSED",
+    "stateReason": "completed"
   },
   {
     "key": "hint",
@@ -13,7 +15,9 @@
     "url": "https://github.com/NJgit9/mega-s01e03-what-it-shows/issues/2",
     "title": "[4471/hint] booking-v3 date hint disagrees with date interpretation \u2014 33 reports",
     "reportCount": 33,
-    "bodySha256": "f9473350a48574a21b20df82deb9344f70e5353c0932d5bb3fe9026b4399dd76"
+    "bodySha256": "67343b6d0cd9cca3906d4e13258d013961d8196bdbbe83f13087aa8995a99244",
+    "state": "CLOSED",
+    "stateReason": "not_planned"
   },
   {
     "key": "invite-calendar-date",
@@ -21,7 +25,9 @@
     "url": "https://github.com/NJgit9/mega-s01e03-what-it-shows/issues/3",
     "title": "[4471/invite-calendar-date] Invite date and calendar date differ by one day \u2014 1 report",
     "reportCount": 1,
-    "bodySha256": "0da9760cb5413c8679e464747cfa440fe76c9f2dfc73ad637b9871d3cfe99beb"
+    "bodySha256": "8b02b9c3de277be4b297ad717ba83220c3409bb3164d6512b19972a49e90167c",
+    "state": "OPEN",
+    "stateReason": null
   },
   {
     "key": "june-one-day",
@@ -29,7 +35,9 @@
     "url": "https://github.com/NJgit9/mega-s01e03-what-it-shows/issues/4",
     "title": "[4471/june-one-day] Bookings in June are reported one day off \u2014 1 report",
     "reportCount": 1,
-    "bodySha256": "cecdc8457a91d70e233422b5f09e02cda89031314ff85b707cf2d45e8b5f1a06"
+    "bodySha256": "115bc06606bc0b5f9684c4790b411b88a0c53b97b8cc9df1cb606e381df5abc1",
+    "state": "OPEN",
+    "stateReason": null
   },
   {
     "key": "invite-before-booking",
@@ -37,7 +45,9 @@
     "url": "https://github.com/NJgit9/mega-s01e03-what-it-shows/issues/5",
     "title": "[4471/invite-before-booking] Invite reportedly arrives before its booking is created \u2014 1 report",
     "reportCount": 1,
-    "bodySha256": "52f041337a9c364100139763551133d8f242e0f5e671df64831593a613c16918"
+    "bodySha256": "5d416d43fb6b03613bcd1f4a80983a5c08b2ef74d0771260347c46e44d54c151",
+    "state": "OPEN",
+    "stateReason": null
   },
   {
     "key": "cross-timezone-date",
@@ -45,7 +55,9 @@
     "url": "https://github.com/NJgit9/mega-s01e03-what-it-shows/issues/6",
     "title": "[4471/cross-timezone-date] The same meeting shows different days in Lisbon and Toronto \u2014 1 report",
     "reportCount": 1,
-    "bodySha256": "30656a558b3c657deac73f90de18f5dcb7801326cbc754062cafe521257fc9bc"
+    "bodySha256": "1402595252e72f2c3420002b5f1d600c83e17e7d06256a7eaabefcc699556462",
+    "state": "OPEN",
+    "stateReason": null
   },
   {
     "key": "weekday-display",
@@ -53,6 +65,8 @@
     "url": "https://github.com/NJgit9/mega-s01e03-what-it-shows/issues/7",
     "title": "[4471/weekday-display] Tuesday 6 October is displayed as Monday \u2014 1 report",
     "reportCount": 1,
-    "bodySha256": "80ad082eb80c4f1548dd3c2bcd98d614cddc65e1dba372f825f5bf3d5ae3b413"
+    "bodySha256": "f37964a251f0a5d86ff5ba82ddc9a21db904d0429b656780b3f72d696a5c3f49",
+    "state": "OPEN",
+    "stateReason": null
   }
 ]

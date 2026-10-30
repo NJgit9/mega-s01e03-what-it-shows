@@ -16,6 +16,12 @@ R-41200: 7 April became 4 July; R-41201 describes the reverse direction.
 
 Reproduce the shared-parser path; preserve the tenant-intended day, month and year through invite generation. Check ambiguous dates both ways, unambiguous dates and month-first controls. The five contradictory symptom reports have separate investigation tickets.
 
+## Engineering disposition
+
+The [course engineering update](https://hq.mega.dev/challenges/what-it-shows#engineering-update), observed 2026-10-30, reports #4471 closed 05 oct.
+
+Reported FIXED: fix(dates): parse dd/mm for eu locales. This ticket can close as completed based on the engineering report; no independent production verification is claimed.
+
 ## Triage boundaries
 
 The supplied classifier produces 379 parser and 33 hint reports. Review moved five contradictory symptom reports out of the parser ticket into five separate investigations. The ticket counts now partition the 412 unique report IDs exactly once: 374 parser candidates, 33 hint reports, and five single-report investigations. These investigations may later merge if evidence establishes the same cause; distinct symptoms alone do not prove distinct root causes.

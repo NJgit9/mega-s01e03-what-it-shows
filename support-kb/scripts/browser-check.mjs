@@ -22,6 +22,9 @@ try {
   assert.match(text, /379/);
   assert.match(text, /33/);
   assert.match(text, /7 GitHub issues filed/);
+  assert.match(text, /2 closed · 5 open/);
+  assert.match(text, /WON'T FIX/);
+  assert.match(text, /booking-v3 form retired/);
   const tickets = page.getByTestId('problem-tickets');
   assert.equal(await tickets.locator('tbody tr').count(), 7);
   const ticketCounts = [];

@@ -1,12 +1,18 @@
-import { mkdir, writeFile } from 'node:fs/promises';
+import { mkdir, writeFile, readFile } from 'node:fs/promises';
 import { analyze } from './analyze.mjs';
 
 const result = await analyze();
+const engineering = JSON.parse(await readFile(new URL('../src/lib/data/engineering-update.json', import.meta.url), 'utf8'));
 const locations = [new URL('../../issue-drafts/', import.meta.url), new URL('../static/ticket-drafts/', import.meta.url)];
 for (const location of locations) await mkdir(location, { recursive: true });
 for (const p of result.problemTickets) {
   const ids = p.reportIds;
   const list = Array.from({ length: Math.ceil(ids.length / 8) }, (_, i) => ids.slice(i * 8, i * 8 + 8).join(' ')).join('\n');
+  const outcome = p.key === 'parser'
+    ? `Reported FIXED: ${engineering.parser.detail}. This ticket can close as completed based on the engineering report; no independent production verification is claimed.`
+    : p.key === 'hint'
+      ? `Reported WON'T FIX: ${engineering.hint.detail}. Close as not planned, preserving retirement as the disposition; do not describe the form as repaired.`
+      : 'The update gives no per-report resolution for this investigation. Keep it OPEN pending evidence; closing source ticket #4471 does not establish that this reported symptom is resolved.';
   const body = `# [4471/${p.key}] ${p.title} — ${p.count} report${p.count === 1 ? '' : 's'}
 
 ## Scope
@@ -24,6 +30,12 @@ ${p.evidence}
 ## Action and verification
 
 ${p.next}
+
+## Engineering disposition
+
+The [course engineering update](${engineering.source}), observed ${engineering.observedOn}, reports #${engineering.sourceTicket} closed ${engineering.closedDateAsWritten}.
+
+${outcome}
 
 ## Triage boundaries
 

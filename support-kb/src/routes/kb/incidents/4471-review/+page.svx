@@ -2,13 +2,14 @@
 layout: runbook
 title: '#4471 review · separate causes before merging'
 owner: Nick Johnson and Codex
-status: proposed
+status: reviewed
 reviewed: 2026-10-30
 signature: 'Nick Johnson / Codex / S01E03 / 2026-10-30'
 ---
 
 <script>
   import ReviewSummary from '#lib/kb/ReviewSummary.svelte';
+  import EngineeringUpdate from '#lib/kb/EngineeringUpdate.svelte';
   import CauseTable from '#lib/kb/CauseTable.svelte';
   import QueueTimeline from '#lib/kb/QueueTimeline.svelte';
   import DedupeExplorer from '#lib/kb/DedupeExplorer.svelte';
@@ -16,6 +17,10 @@ signature: 'Nick Johnson / Codex / S01E03 / 2026-10-30'
 </script>
 
 The [original incident page](/kb/incidents/4471) calls this one known issue with one queued fix. Its code separates parser and booking-form hint paths, but it also assigns contradictory symptoms to parser without reading their bodies. The linked GitHub tickets track the modeled causes and separate investigations for the unmatched problems.
+
+## Engineering update
+
+<EngineeringUpdate />
 
 ## Reconciled evidence
 

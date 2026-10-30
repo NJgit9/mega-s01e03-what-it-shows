@@ -27,6 +27,19 @@ leaving 374 parser candidates and 33 hint reports. Do not merge the investigatio
 evidence establishes a shared cause. Seven investigation boundaries do not establish seven proven root causes.
 The accepted historical decision and all original export files are unchanged.
 
+## Engineering dispositions
+
+The [course engineering update](https://hq.mega.dev/challenges/what-it-shows#engineering-update),
+observed October 30, reports source ticket #4471 closed “05 oct”:
+
+- [Parser #1](https://github.com/NJgit9/mega-s01e03-what-it-shows/issues/1): FIXED, `fix(dates): parse dd/mm for eu locales`; closed as completed on that reported outcome.
+- [Form hint #2](https://github.com/NJgit9/mega-s01e03-what-it-shows/issues/2): WON'T FIX, booking-v3 form retired; closed as not planned. Retirement is not a repaired form.
+- Investigations #3–#7 remain open because that update supplies no per-report resolution.
+
+The original October 4 export is preserved unchanged. The later engineering report is in
+`evidence/engineering-update.json` and rendered separately on the added review page.
+These are course-reported dispositions, not independent production test results.
+
 ## Run locally
 
 Use Node 24 or newer. From `support-kb/`:
