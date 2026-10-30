@@ -2,6 +2,10 @@
 
 Challenge: [MEGA.dev S01E03](https://hq.mega.dev/challenges/what-it-shows).
 
+The course accepted the tickets and signed page on October 30, 2026.
+[Debrief and reusable setup](DEBRIEF.md) · [Course debrief](https://hq.mega.dev/challenges/what-it-shows#debrief).
+Acceptance covers the Challenge deliverable; investigations #3–#7 remain open.
+
 This exercise preserves the supplied support KB, adds a signed review page, and files one
 ticket for each distinguishable problem. No product code or fix is included.
 
