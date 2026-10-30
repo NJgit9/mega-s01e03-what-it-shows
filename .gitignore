@@ -1,0 +1,16 @@
+.DS_Store
+.env
+.env.*
+!.env.example
+*.local.json
+*.local.md
+*.local.txt
+*.log
+logs/
+node_modules/
+.svelte-kit/
+build/
+credentials*
+tokens*
+*.pem
+*.key

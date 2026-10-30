@@ -1,0 +1,30 @@
+{
+  "name": "mega-what-it-shows-kb",
+  "private": true,
+  "type": "module",
+  "imports": {
+    "#lib/*": "./src/lib/*"
+  },
+  "engines": {
+    "node": ">=24"
+  },
+  "scripts": {
+    "dev": "vite --host 127.0.0.1 --port 4173",
+    "build": "vite build",
+    "export": "npm run tickets && npm run build && node scripts/export.mjs",
+    "preview": "vite preview --host 127.0.0.1 --port 4173",
+    "analyze": "node scripts/analyze.mjs",
+    "tickets": "node scripts/prepare-tickets.mjs",
+    "test": "node --test scripts/*.test.mjs",
+    "test:browser": "node scripts/browser-check.mjs"
+  },
+  "devDependencies": {
+    "@sveltejs/adapter-static": "4.0.1",
+    "@sveltejs/kit": "3.1.1",
+    "@sveltejs/vite-plugin-svelte": "7.3.1",
+    "mdsvex": "0.12.8",
+    "playwright": "1.64.1",
+    "svelte": "5.57.3",
+    "vite": "8.3.5"
+  }
+}

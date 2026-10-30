@@ -1,0 +1,32 @@
+{
+  "isolatedBrowser": true,
+  "stamp": "DR-TNZ7-ZCED",
+  "snapshotCounts": {
+    "rows": 427,
+    "duplicates": 15,
+    "reports": 412,
+    "originalParser": 379,
+    "originalHint": 33
+  },
+  "ticketCounts": [
+    374,
+    33,
+    1,
+    1,
+    1,
+    1,
+    1
+  ],
+  "tickets": 7,
+  "draftLinksWorking": true,
+  "dedupeCases": 5,
+  "interactiveCauseChanges": true,
+  "timelineBars": 54,
+  "historicalDecisionStale": true,
+  "reviewDiscoverable": true,
+  "mobileOverflow": {
+    "viewport": 390,
+    "document": 390
+  },
+  "browserErrors": []
+}

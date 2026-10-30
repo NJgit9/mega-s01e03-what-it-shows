@@ -1,0 +1,73 @@
+---
+layout: runbook
+title: '#4471 review · separate causes before merging'
+owner: Nick Johnson and Codex
+status: proposed
+reviewed: 2026-10-30
+signature: 'Nick Johnson / Codex / S01E03 / 2026-10-30'
+---
+
+<script>
+  import ReviewSummary from '#lib/kb/ReviewSummary.svelte';
+  import CauseTable from '#lib/kb/CauseTable.svelte';
+  import QueueTimeline from '#lib/kb/QueueTimeline.svelte';
+  import DedupeExplorer from '#lib/kb/DedupeExplorer.svelte';
+  import RenderStamp from '#lib/kb/RenderStamp.svelte';
+</script>
+
+The [original incident page](/kb/incidents/4471) calls this one known issue with one queued fix. Its code separates parser and booking-form hint paths, but it also assigns contradictory symptoms to parser without reading their bodies. Keep actionable tickets for the modeled causes and separate investigations for the unmatched problems. A footnote does not give a problem an owner or a resolution path.
+
+## Reconciled evidence
+
+<ReviewSummary />
+
+<details>
+  <summary>Original classifier output, before the problem review</summary>
+  <p>This is the unchanged export's table, not the proposed ticket inventory. Its parser total still includes the five reports now assigned to separate investigations.</p>
+  <div class="cause-view">
+    <CauseTable ticket={4471} />
+  </div>
+</details>
+
+## Parser: month-first parsing of day-first input
+
+The shared parser reads month first even when the tenant writes day first. For example, R-41200 (Harbour Dental, en-GB, app) describes 7 April becoming 4 July. App and email reports, and booking-v2 form reports, belong here for the day-first tenants in this export. Use the tenant directory, not the reporter's browser locale.
+
+Preserve the tenant's intended day, month and year through parsing and invite generation. Check ambiguous dates in both directions, unambiguous dates, app/email/v2 paths, and month-first locales as controls. The parser draft excludes the five contradictory reports. Its remaining membership follows the supplied tenant/form/channel model and still needs production reproduction.
+
+## Hint: booking-v3 prints the wrong date convention
+
+The v3 hint prints MM/DD/YYYY, while the form interprets input in the tenant's day-first convention. Form submissions for Alder Physio (de-DE), Copper Studio (es-ES), and Pale Harbour (pt-PT) belong here. R-41230 describes 6 January becoming 1 June. These reports need their own ticket; changing the shared parser alone cannot repair this mismatch.
+
+Generate the visible hint and form interpretation from the same tenant locale. Check all three affected tenants with an ambiguous date, v2 and app/email controls, and a month-first locale. Existing bookings need a separate review before any bulk correction.
+
+## Replace subject-only deduplication
+
+This page proposes replacing [decision 0001](/kb/decisions/0001-dedupe-by-subject); the accepted historical record remains unchanged. Its June 2024 review date is stale under the KB's review policy. The triage prose follows that decision, but the live explorer uses causes.ts and the tenant directory.
+
+The same subject can describe different causes: Alder Physio's form and app paths split. Different subjects and channels can share a cause: Kettle Books app and email reports merge. The same form subject can split across tenant form versions. Unknown tenants have no established cause and must remain unplaced until investigated, even when their subjects match.
+
+Before merging, deduplicate export rows by report ID, read the body, look up the tenant's locale and form, and compare the channel with the modeled cause. Treat contradictory symptoms as separate investigations instead of forcing them into that model. Merge only when evidence supports a shared cause. Preserve report IDs, tenant, channel, dates and body evidence. Do not merge merely because subjects or intake tags match, and do not label an investigation as a confirmed root cause.
+
+The unchanged explorer below demonstrates the supplied model's tenant/channel distinctions. It does not inspect report bodies and cannot resolve the separate investigations.
+
+<DedupeExplorer />
+
+## Received is not merged
+
+The received timestamps show failures arriving over months. The large July merge batch shows when the desk consolidated a backlog. Neither establishes that the problem began in July, that a fix shipped, or that impact stopped. Keep receipt and merge dates separate and reopen review when new reports or changed tenant definitions arrive.
+
+<QueueTimeline ticket={4471} />
+
+## Scope and follow-up
+
+This is the October 4 export, reviewed on October 30. Counts reflect that snapshot and the supplied classification code, not an independent production reproduction or a fresh live queue. No product source or booking logs were supplied. The desk supports sched-prod and other products; this export has no product field, so it cannot attribute every report to sched-prod or establish how many of its roughly 300,000 invite recipients were affected.
+
+Each draft linked in the ticket table has its own report count, included IDs, evidence and next action. Together they assign every report once. The investigations may eventually share causes, but no supplied evidence proves that yet. Before resolving a ticket, reproduce its problem and verify the result on its own path. Course acceptance and a successful KB render do not establish that the underlying product bugs are fixed.
+
+<RenderStamp {signature} />
+
+<style>
+  .cause-view { overflow-x: auto; }
+  .cause-view :global(table) { min-width: 680px; }
+</style>

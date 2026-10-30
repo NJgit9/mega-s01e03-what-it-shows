@@ -1,0 +1,1 @@
+import{E as e,F as t,N as n,p as r,w as i}from"../chunks/2D1cxmbv.js";import"../chunks/CnzFfRdU.js";var a=e(`<a href="/kb/">Support knowledge base</a>`);function o(e){var o=a();r(`1uha8ag`,e=>{n(()=>{t.title=`Support knowledge base`})}),i(e,o)}export{o as component};
